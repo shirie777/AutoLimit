@@ -15,7 +15,7 @@ with open('fxLimitsearch.txt', 'r', encoding='utf-8') as f:
     user_prompt = f.read()
 
 genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
-model = genai.GenerativeModel('gemini-3-flash')
+model = genai.GenerativeModel('gemini-1.5-flash')
 response = model.generate_content(user_prompt, tools=[{"google_search_retrieval": {}}])
 
 # 改行を排除して比較用の1行データを作成
